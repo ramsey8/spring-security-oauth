@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.baeldung.web.dto.Foo;
 
+import java.security.Principal;
+
 @Controller
 public class FooController {
 
@@ -26,7 +28,7 @@ public class FooController {
     @PreAuthorize("#oauth2.hasScope('foo') and #oauth2.hasScope('read')")
     @RequestMapping(method = RequestMethod.GET, value = "/foos/{id}")
     @ResponseBody
-    public Foo findById(@PathVariable final long id) {
+    public Foo findById(@PathVariable final long id, Principal principal) {
         return new Foo(Long.parseLong(randomNumeric(2)), randomAlphabetic(4));
     }
 

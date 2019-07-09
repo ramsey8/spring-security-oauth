@@ -88,11 +88,23 @@
 
 		<module>oauth-authorization-server</module>
                 <module>oauth-zuul-gateway</module>
+        <module>oauth-autherization-redis-server</module>
 
-		<!-- commented out because these don't build on Jenkins -->
+        <!-- commented out because these don't build on Jenkins -->
 		<!-- <module>clients-angular4/oauth-ui-implicit-angular4</module> <module>clients-angular4/oauth-ui-password-angular4</module> -->
 	</modules>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>21.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
 	<profiles>
 		<profile>
 			<id>integration</id>

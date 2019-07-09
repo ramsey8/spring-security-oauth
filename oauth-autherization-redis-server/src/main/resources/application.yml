@@ -1,0 +1,13 @@
+spring:
+  redis:
+    host: 10.128.23.14
+    password: 123456
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+server:
+  port: 8084
+  servlet:
+    context-path: /spring-security-oauth-server
+
